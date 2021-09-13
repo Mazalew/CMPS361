@@ -1,0 +1,19 @@
+p {
+  font-size: 3.5em;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom:-20px;
+}
+
+body {
+  background-color: #93cad9;
+}
+
+table, th, td {
+  border: 1px solid black;
+  font-size: 1.5em;
+}
+
+#left {
+  padding-left: 350px;
+}
