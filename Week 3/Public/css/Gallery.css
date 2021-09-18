@@ -1,0 +1,20 @@
+.Text {
+  font-size: 3em;
+  text-align: center;
+}
+
+ul {
+  list-style-type:none;
+}
+
+body {
+  background-color: #74cc90;
+}
+
+#Gizmo {
+  padding-left: 600px;
+}
+
+#Wizard {
+  padding-left: 800px;
+}

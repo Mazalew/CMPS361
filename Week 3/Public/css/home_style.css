@@ -1,0 +1,24 @@
+#MainTxt {
+  font-size: 3em;
+  text-align: center;
+}
+.Button {
+  font: "Times New Roman";
+  font-size: 2em;
+  background-color: #6094b5;
+}
+.Button:hover {
+  background-color: #a65172;
+}
+a {
+  padding-left: 750px;
+}
+li {
+  padding-bottom: 30px;
+}
+ul {
+  list-style-type:none;
+}
+body {
+  background-color: #74cc90;
+}
