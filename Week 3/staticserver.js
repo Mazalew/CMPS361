@@ -28,7 +28,8 @@ var http = require('http'),
        '.json': 'application/json',
        '.css': 'text/css',
        '.jpg': 'image/jpeg',
-       '.png': 'image/png'
+       '.png': 'image/png',
+       '.gif': 'image/gif'
      };
     var thisUrl = url.parse(req.url,true,true);
     var thisFile = path.basename(thisUrl.pathname);
@@ -68,6 +69,8 @@ var http = require('http'),
         //check case default empty filename
           serveStaticFile(res, __dirname +"/public/"+thisFile, mimeType);
         break;
+        case 'image/gif':
+        case 'image/x-icon':
         case 'image/jpeg':
         case 'image/png':
         //all image files are in path public/image/thisFile
