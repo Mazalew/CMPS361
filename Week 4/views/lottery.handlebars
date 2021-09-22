@@ -1,0 +1,115 @@
+<div id="all">
+  <img src="/img/Powerball.jpg" id="Powerball_Img"></img>
+  <p class="center lottery_txt_default" id="Lucky_Numbers_PB"> Your Powerball Lucky Numbers are...</p>
+  <div id="Powerball">
+    <p class="center lottery_txt_default" id="Label-PB"> 15-27-54-47-1</p>
+    <p class="center lottery_txt_default" id="Label-PB2">Powerball - 10</p>
+  </div>
+  <br><br><br>
+
+
+  <img src="/img/cash5.jpg" id="cash5_Img"></img>
+  <p class="center lottery_txt_default" id="Lucky_Numbers_C5"> Your Cash5 Lucky Numbers are...</p>
+  <div id="cash5">
+    <p class="center lottery_txt_default" id="Label-C5"> 31-41-32-21-7</p>
+  </div>
+  <br><br><br>
+
+
+  <img src="/img/TreasureHunt.jpg" id="TreasureHunt_Img"></img>
+  <p class="center lottery_txt_default" id="Lucky_Numbers_TH"> Your Treausure Hunt Lucky Numbers are...</p>
+  <div id="Treasure-Hunt">
+    <p class="center lottery_txt_default" id="Label-TH"> 5-20-7-12-25</p>
+  </div>
+  <br><br><br>
+
+
+  <img src="/img/MegaMillions.jpg" id="MegaMillions_Img"></img>
+  <p class="center lottery_txt_default" id="Lucky_Numbers_MM"> Your Mega Millions Lucky Numbers are...</p>
+  <div id="Mega-Millions">
+    <p class="center lottery_txt_default" id="Label-MM"> 5-20-7-12-25</p>
+    <p class="center lottery_txt_default" id="Label-MM2">Mega Ball - 41</p>
+  </div>
+  <br><br><br>
+
+
+  <img src="/img/Pick4.jpg" id="Pick4_Img"></img>
+  <p class="center lottery_txt_default" id="Lucky_Numbers_P4"> Your Pick 4 Lucky Numbers are...</p>
+  <div id="Pick4">
+    <p class="center lottery_txt_default" id="Label-P4"> 5-3-7-5</p>
+    <p class="center lottery_txt_default" id="Label-P42">Wild Ball - 5</p>
+  </div>
+  <br><br><br>
+
+  <img src="/img/Pick5.jpg" id="Pick5_Img"></img>
+  <p class="center lottery_txt_default" id="Lucky_Numbers_P5"> Your Pick 5 Lucky Numbers are...</p>
+  <div id="Pick5">
+    <p class="center lottery_txt_default" id="Label-P5"> 4-8-2-4-3</p>
+    <p class="center lottery_txt_default" id="Label-P52">Wild Ball - 1</p>
+  </div>
+  <br><br><br>
+
+  <button type="button" id="Update" onClick="changeAll();">New Numbers!</button>
+  <br><br><br>
+</div>
+
+<script>
+
+function Random(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
+}
+
+function changeAll() {
+  document.getElementById("Label-PB").innerHTML = getNewNumbers(1, 69, 5, true); //Updates Powerball's 5 numbers
+  document.getElementById("Label-PB2").innerHTML = "Powerball - " + Random(1,36); //Updates the Powerball Number
+  document.getElementById("Label-C5").innerHTML = getNewNumbers(1, 43, 5, true);  //Updates the Cash 5 numbers
+  document.getElementById("Label-TH").innerHTML = getNewNumbers(1, 30, 5, true);  //Updates the Cash 5 numbers
+  document.getElementById("Label-MM").innerHTML = getNewNumbers(1, 75, 5, true); //Updates Megaball's 5 numbers
+  document.getElementById("Label-MM2").innerHTML = "Mega Ball - " + Random(1,46); //Updates the Mega Ball Number
+  document.getElementById("Label-P4").innerHTML = getNewNumbers(0, 9, 4, false); //Updates Pick 4's 4 numbers
+  document.getElementById("Label-P42").innerHTML = "Wild Ball - " + Random(0,9); //Updates the Pick 4's Wild Ball Number
+  document.getElementById("Label-P5").innerHTML = getNewNumbers(0, 9, 5, false); //Updates Pick 5's 5 numbers
+  document.getElementById("Label-P52").innerHTML = "Wild Ball - " + Random(0,9); //Updates the Pick 5's Wild Ball Number
+}
+
+//Parameter explinaiton
+//Min - used to represent the min number of numbers availabe for that lottery
+//Max - used to represent the max number of numbers availabe for that lottery
+//Amount - How many numbers to return
+//Repeat - Can numbers repeat for that lottery
+
+//This fuction gets 4-5 numbers and returns them.  Allows repeats if repeat is true.
+function getNewNumbers(min, max, amount, rep) {
+  Numbers = [];
+  Repeat = false;
+
+  for (i = 0; i < amount; i++) {
+    num = Random (min, max);
+    console.log(num);
+    if (rep == true) {
+      for (x in Numbers) {
+        if (Numbers[x] == num) {
+          i--;
+          console.log("Repeat");
+          Repeat = true;
+        }
+      }
+      if (Repeat === false) {
+        Numbers[i] = num;
+      }
+      Repeat = false;
+    }
+    else {
+      Numbers[i] = num;
+    }
+  }
+  if (amount === 5) {
+    return (Numbers[0] + "-" + Numbers[1] + "-" + Numbers[2] + "-" + Numbers[3] + "-" + Numbers[4]);
+  }
+  else {
+    return (Numbers[0] + "-" + Numbers[1] + "-" + Numbers[2] + "-" + Numbers[3]);
+  }
+}
+</script>

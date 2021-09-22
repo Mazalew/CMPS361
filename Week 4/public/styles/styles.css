@@ -1,0 +1,81 @@
+#heading {
+  background-color: #c29fcc;
+  text-align: center;
+  border-top: 2px;
+  border-bottom: 2px;
+  border-left: 2px;
+  border-right: 2px;
+  border-style: ridge;
+  margin: 0px 200px 0px 200px;
+}
+
+#footer {
+  background-color: #c29fcc;
+  text-align: center;
+  border-top: 2px;
+  border-bottom: 2px;
+  border-left: 2px;
+  border-right: 2px;
+  border-style: ridge;
+  margin: 0px 800px 0px 800px;
+}
+
+#Lottery_Balls_Img {
+  margin-left: 460px;
+}
+
+#About-Mike {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+#Powerball_Img {
+  width: 400px;
+  height: 200px;
+  margin-left: 740px;
+}
+
+#cash5_Img {
+  width: 600px;
+  height: 200px;
+  margin-left: 650px;
+}
+
+#TreasureHunt_Img, #MegaMillions_Img, #Pick4_Img, #Pick5_Img {
+  width: 600px;
+  height: 400px;
+  margin-left: 650px;
+}
+
+#Powerball, #cash5, #Treasure-Hunt, #Mega-Millions, #Pick4, #Pick5 {
+  border-top: 2px;
+  border-bottom: 2px;
+  border-left: 2px;
+  border-right: 2px;
+  border-style: solid;
+  margin: 0px 600px 0px 600px;
+}
+
+#Link {
+  font-size: 3em;
+}
+
+
+body {
+  background-color:#ad71d9;
+}
+
+button {
+  margin-left: 780px;
+  font-size: 3em;
+  background-color:grey;
+  border-color: grey;
+}
+
+.center {
+  text-align: center;
+}
+
+.lottery_txt_default {
+  font-size: 2em;
+}
