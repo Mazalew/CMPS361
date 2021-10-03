@@ -1,0 +1,173 @@
+<div class="container">
+	<div class="container">
+		<table class="table table-bordered table-striped" id="Table">
+			<div>
+				<input type=button value="Options" id="Options_Button"></input>
+				<div id=Options class=hidden>
+					<form id=form>
+						<input type=radio id="invoide_id_checkbox">Diable Invoice ID </input>
+						<input type=radio id="vendor_id_checkbox">Diable Vendor ID </input>
+						<input type=radio id="invoice_number_checkbox">Diable Invoice Number </input></br>
+						<input type=radio id="invoice_date_checkbox">Diable Invoice Date </input>
+						<input type=radio id="invoice_total_checkbox">Diable Invoice Total </input>
+						<input type=radio id="payment_total_checkbox">Diable Payment Total </input></br>
+						<input type=radio id="credit_total_checkbox">Diable Credit Total </input>
+						<input type=radio id="terms_id_checkbox">Diable Terms ID </input>
+						<input type=radio id="invoice_due_date_checkbox">Diable Invoice Due Date </input>
+						<input type=radio id="payment_date_checkbox">Diable Payment Date </input></br></br>
+						Search Invoice ID: <input type=text id="invoice_id_search"></input></br>
+						Search Vendor ID: <input type=text id="vendor_id_search"></input></br>
+					  Search Invoice Number: <input type=text id="invoice_number_search"></input></br></br>
+						<input type=submit id="submit" value="Update Table"></input>
+					</form>
+
+					<p style="color:red">There is a bug where removing the first row would remove the table head so I left the first row on at all times to avoid removing the table head.</p>
+				</div>
+			</div>
+				<thead>
+					<tr>
+						<th id="invoice_id">Invoice ID</th>
+						<th id="vendor_id">Vendor ID</th>
+						<th id="invoice_number">Invoice Number</th>
+						<th id="invoice_date">Invoice Date</th>
+						<th id="invoice_total">Inovice Total</th>
+						<th id="payment_total">Payment Total</th>
+						<th id="credit_total">Credit Total</th>
+						<th id="terms_id">Terms ID</th>
+						<th id="invoice_due_date">Invoice Due Date</th>
+						<th id="payment_date">Payment Date</th>
+					</tr>
+				</thead>
+				<tbody>
+	{{#each partials.dbContext}}
+	    <tr><td id="invoice_id">{{invoice_id}}
+			</td><td id="vendor_id">{{vendor_id}}
+			</td><td id="invoice_number">{{invoice_number}}
+			</td><td id="invoice_date">{{invoice_date}}
+			</td><td id="invoice_total">{{invoice_total}}
+			</td><td id="payment_total">{{payment_total}}
+			</td><td id="credit_total">{{credit_total}}
+			</td><td id="terms_id">{{terms_id}}
+			</td><td id="invoice_due_date">{{invoice_due_date}}
+			</td><td id="payment_date">{{payment_date}}
+			</td></tr>
+	{{/each}}
+</tbody>
+</table>
+		</div>
+</div>
+
+<script>
+$(document).ready(function() {
+	$('#Options_Button').click(function (){
+		if ($('#Options').hasClass('hidden')) {$('#Options').removeClass('hidden');}
+		else {$('#Options').addClass('hidden');}
+		$('#form').submit(function (e){
+			e.preventDefault();
+			if ($('#invoide_id_checkbox').is(':checked')){
+				$('#Table th:nth-child('+1+')').hide();
+				$('#Table td:nth-child('+1+')').hide();
+				$('#invoide_id_checkbox').prop("checked", false);
+				}
+			else {
+				$('#Table th:nth-child('+1+')').show();
+				$('#Table td:nth-child('+1+')').show();
+			}
+			if ($('#vendor_id_checkbox').is(':checked')){
+				$('#Table th:nth-child('+2+')').hide();
+				$('#Table td:nth-child('+2+')').hide();
+				$('#vendor_id_checkbox').prop("checked", false);
+				}
+			else {
+				$('#Table th:nth-child('+2+')').show();
+				$('#Table td:nth-child('+2+')').show();
+			}
+			if ($('#invoice_number_checkbox').is(':checked')){
+				$('#Table th:nth-child('+3+')').hide();
+				$('#Table td:nth-child('+3+')').hide();
+				$('#invoice_number_checkbox').prop("checked", false);
+				}
+			else {
+				$('#Table th:nth-child('+3+')').show();
+				$('#Table td:nth-child('+3+')').show();
+			}
+			if ($('#invoice_date_checkbox').is(':checked')){
+				$('#Table th:nth-child('+4+')').hide();
+				$('#Table td:nth-child('+4+')').hide();
+				$('#invoice_date_checkbox').prop("checked", false);
+				}
+			else {
+				$('#Table th:nth-child('+4+')').show();
+				$('#Table td:nth-child('+4+')').show();
+			}
+			if ($('#invoice_total_checkbox').is(':checked')){
+				$('#Table th:nth-child('+5+')').hide();
+				$('#Table td:nth-child('+5+')').hide();
+				$('#invoice_total_checkbox').prop("checked", false);
+				}
+			else {
+				$('#Table th:nth-child('+5+')').show();
+				$('#Table td:nth-child('+5+')').show();
+			}
+			if ($('#payment_total_checkbox').is(':checked')){
+				$('#Table th:nth-child('+6+')').hide();
+				$('#Table td:nth-child('+6+')').hide();
+				$('#payment_total_checkbox').prop("checked", false);
+				}
+			else {
+				$('#Table th:nth-child('+6+')').show();
+				$('#Table td:nth-child('+6+')').show();
+			}
+			if ($('#credit_total_checkbox').is(':checked')){
+				$('#Table th:nth-child('+7+')').hide();
+				$('#Table td:nth-child('+7+')').hide();
+				$('#credit_total_checkbox').prop("checked", false);
+				}
+			else {
+				$('#Table th:nth-child('+7+')').show();
+				$('#Table td:nth-child('+7+')').show();
+			}
+			if ($('#terms_id_checkbox').is(':checked')){
+				$('#Table th:nth-child('+8+')').hide();
+				$('#Table td:nth-child('+8+')').hide();
+				$('#terms_id_checkbox').prop("checked", false);
+				}
+			else {
+				$('#Table th:nth-child('+8+')').show();
+				$('#Table td:nth-child('+8+')').show();
+			}
+			if ($('#invoice_due_date_checkbox').is(':checked')){
+				$('#Table th:nth-child('+9+')').hide();
+				$('#Table td:nth-child('+9+')').hide();
+				$('#invoice_due_date_checkbox').prop("checked", false);
+				}
+			else {
+				$('#Table th:nth-child('+9+')').show();
+				$('#Table td:nth-child('+9+')').show();
+			}
+			if ($('#payment_date_checkbox').is(':checked')){
+				$('#Table th:nth-child('+10+')').hide();
+				$('#Table td:nth-child('+10+')').hide();
+				$('#payment_date_checkbox').prop("checked", false);
+				}
+			else {
+				$('#Table th:nth-child('+10+')').show();
+				$('#Table td:nth-child('+10+')').show();
+			}
+			var Table = document.getElementById('Table');
+			for (i = 1; i < Table.rows.length; i++) {
+				$('#Table tr:nth-child('+i+')').show();
+
+				if ((Table.rows[i].childNodes[1].innerHTML.trim() !== $('#vendor_id_search').val()  && $('#vendor_id_search').val() !== "") ||
+			      (Table.rows[i].childNodes[0].innerHTML.trim() !== $('#invoice_id_search').val() && $('#invoice_id_search').val() !== "") ||
+						Table.rows[i].childNodes[2].innerHTML.trim() !== $('#invoice_number_search').val() && $('#invoice_number_search').val() !== "") {
+					if (i === 1) {}
+					else {
+						$('#Table tr:nth-child('+i+')').hide();
+					}
+				}
+			}
+		});
+	});
+});
+</script>
