@@ -1,0 +1,19 @@
+<div class="container">
+	<div class="container">
+		<table class="table table-bordered table-striped">
+				<thead>
+					<tr>
+						<th>User Name</th>
+						<th>Email</th>
+						<th>Password</th>
+					</tr>
+				</thead>
+				<tbody>
+	{{#each partials.dbContext}}
+	    <tr><td>{{name}}</td><td>{{email}}</td><td>{{psw}}</td></trl>
+	{{/each}}
+</tbody>
+</table>
+		</div>
+	<small>Source: <a href="http://it.pointpark.edu">Technology Website at Point Park</a></small>
+</div>
